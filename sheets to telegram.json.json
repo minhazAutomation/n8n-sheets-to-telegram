@@ -1,0 +1,91 @@
+{
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1UmoX7Y26S9yINNJ88DiMlOYPoog6VHA1pnPC2wWCnNI/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1UmoX7Y26S9yINNJ88DiMlOYPoog6VHA1pnPC2wWCnNI/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "82bc1c9c-b017-43ea-a91c-686a41c66c6d",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "krWCamXnTEKR6Gdu",
+          "name": "Google Sheets Trigger account 5"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "8962167425",
+        "text": "hellow,from my n8n automation",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "f043cab5-d353-40a5-b978-1fd09f48edd9",
+      "name": "Send a text message",
+      "webhookId": "dc4b652e-4cce-4235-ac96-dd103edfa19e",
+      "credentials": {
+        "telegramApi": {
+          "id": "lW5z5wVXUnsmHcrR",
+          "name": "Telegram account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "08d0a525-069e-4dfe-8bb2-46c4bfc58201",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dab58140d7c62e211ed9b1393ebba88e4a2aeeb46b94ac37c0167c2039b5fcd5"
+  },
+  "nodeGroups": [],
+  "id": "cOfnjnIGczsjdwM5",
+  "tags": []
+}
